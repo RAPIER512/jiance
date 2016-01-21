@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+             xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+
+       <persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
+              <class>ccu.model.auxiliaryinfo.ControlRoomInfo</class>
+              <class>ccu.model.auxiliaryinfo.EnterUnitInfo</class>
+              <class>ccu.model.auxiliaryinfo.WatchPersonInfo</class>
+              <class>ccu.model.basicdata.EventInfo</class>
+              <class>ccu.model.basicdata.EventType</class>
+              <class>ccu.model.basicdata.InterfaceInfo</class>
+              <class>ccu.model.basicdata.LogicGraphic</class>
+              <class>ccu.model.basicdata.MachineInfo</class>
+              <class>ccu.model.basicdata.RecordInfo</class>
+              <class>ccu.model.basicdata.UnitInfo</class>
+              <class>ccu.model.business.CheckInfo</class>
+              <class>ccu.model.business.CrtInfo</class>
+              <class>ccu.model.business.VideoInfo</class>
+              <class>ccu.model.system.LogInfo</class>
+              <class>ccu.model.system.MenuModel</class>
+              <class>ccu.model.system.Role</class>
+              <class>ccu.model.system.SysMenu</class>
+              <class>ccu.model.system.UserInfo</class>
+       </persistence-unit>
+
+</persistence>
