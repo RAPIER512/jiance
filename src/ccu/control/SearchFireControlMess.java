@@ -6,9 +6,4 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Transactional
-
-public class SearchFireControlMess {
-	
-	
-
-}
+public class SearchFireControlMess {}

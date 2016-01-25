@@ -9,6 +9,8 @@ public class SimpliFireControlMess implements Serializable{
 	private int evetcount;
 	private int totlafailure;
 	private double equipmentintegrityrate;
+	//检测是否有下一页。
+	private boolean theNextPage;
 	
 	private String unitId;
 	
@@ -47,6 +49,12 @@ public class SimpliFireControlMess implements Serializable{
 	}
 	public void setUnitId(String unitId) {
 		this.unitId = unitId;
+	}
+	public boolean isTheNextPage() {
+		return theNextPage;
+	}
+	public void setTheNextPage(boolean theNextPage) {
+		this.theNextPage = theNextPage;
 	}
 	
 	

@@ -21,6 +21,10 @@ public class UserInfo implements Serializable {
 	/**
 	 * 
 	 */
+
+
+	
+	
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,6 +34,7 @@ public class UserInfo implements Serializable {
 	@Column(name = "UpdateUserId")
 	private String updateUserId;//鏇存柊鐢ㄦ埛
 
+	//下边这个是有问题的；
 	@Column(name = "UnitId")
 	private String unitId;//鎵�灞炲崟浣�
 

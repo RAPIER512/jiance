@@ -26,10 +26,9 @@ public class CrudController {
     @RequestMapping(value="/get/{id}", method=RequestMethod.GET, produces="text/plain;charset=UTF-8") 
     public String greeting(@PathVariable("id") String id) throws JsonProcessingException {
 		Role r = rr.findOne(id);
-
 	    ObjectMapper om = new ObjectMapper();
-		String s = om.writeValueAsString(r);
-		System.out.println(s);
-		return request.getParameter("callback") + "(" + s + ")"; 
+		String str = om.writeValueAsString(r);
+		System.out.println(str);
+		return request.getParameter("callback") + "(" + str + ")"; 
     }
 }

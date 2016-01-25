@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/ccu/model/basicdata/EventInfo.java=UTF-8
 encoding//src/ccu/model/basicdata/EventType.java=UTF-8
+encoding//src/ccu/model/basicdata/MachineInfo.java=UTF-8
 encoding//src/ccu/model/basicdata/UnitInfo.java=UTF-8
+encoding//src/ccu/model/system/MenuModel.java=UTF-8
 encoding//src/ccu/model/system/UserInfo.java=UTF-8

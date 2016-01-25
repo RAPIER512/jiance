@@ -16,10 +16,10 @@
 			<value>com.microsoft.sqlserver.jdbc.SQLServerDriver</value>
 		</property>
 		<property name="url">
-			<value>jdbc:sqlserver://192.168.74.104:4633;databaseName=jiance</value>
+			<value>jdbc:sqlserver://localhost:1433;databaseName=jiance</value>
 		</property>
 		<property name="username">
-			<value>sb</value>
+			<value>sa</value>
 		</property>
 		<property name="password">
 			<value>1</value>

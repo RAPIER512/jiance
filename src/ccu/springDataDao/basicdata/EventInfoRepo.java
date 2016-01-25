@@ -5,6 +5,7 @@ import java.util.List;
 import ccu.model.basicdata.EventInfo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * Created by Courage on 2015/11/3.
  */
-public interface EventInfoRepo extends JpaRepository<EventInfo,String> {
+public interface EventInfoRepo extends JpaRepository<EventInfo,String>,JpaSpecificationExecutor<EventInfo> {
 	
 	
 	/**

@@ -42,7 +42,6 @@ public class DetailMessageOfEquip {
 	{
 		JSONObject jsonObject = JSONObject.parseObject(str);
 		MachineInfo machineInfo = machineInfoRepo.findByMachineCode(jsonObject.getString("machinecode"));
-		
 		if(machineInfo == null)
 			return "null";
 		else 
@@ -56,7 +55,6 @@ public class DetailMessageOfEquip {
 	{
 		JSONObject jsonObject = JSONObject.parseObject(str);
 		EventInfo eventInfo = eventInfoRepo.findOne(jsonObject.getString("eventid"));
-		
 		if(eventInfo == null)
 			return "null";
 		else 
@@ -65,12 +63,10 @@ public class DetailMessageOfEquip {
 	
 	
 	
-	
 	@RequestMapping(value = "getUserInfo",method = RequestMethod.POST,produces="text/plain;charset=UTF-8")
 	public String getUserInfo(@RequestBody String str)
 	{
 		JSONObject jsonObject = JSONObject.parseObject(str);
-		
 		UserInfo userInfo = userInfoRepo.findOne(jsonObject.getString("userid"));
 		if(userInfo == null)
 			return "null";
@@ -90,6 +86,5 @@ public class DetailMessageOfEquip {
 		else
 			return JSON.toJSONString(eventType);
 	}
-	
 	
 }

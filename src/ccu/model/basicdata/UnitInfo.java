@@ -29,14 +29,18 @@ public class UnitInfo implements Serializable {
 	/**
 	 * 
 	 */
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String id;//鏍囪瘑
 
+//	@Column(name = "UpdateUserId")
+//	private UserInfo updateUser;//鏇存柊浜�
+	
 	@Column(name = "UpdateUserId")
-	private UserInfo updateUser;//鏇存柊浜�
+	private String updateUserId;//鏇存柊浜�
 	
 	@Column(name = "UnitCode")
 	private String unitCode;//鍗曚綅缂栧彿
@@ -65,8 +69,8 @@ public class UnitInfo implements Serializable {
 	@Column(name = "ContactsMail")
 	private String contactsMail;//鑱旂郴浜洪偖绠�
 
-	@Column(name = "Coordinate")
-	private String coordinate;//鍦扮悊浣嶇疆
+//	@Column(name = "Coordinate")
+//	private String coordinate;//鍦扮悊浣嶇疆
 
 	@Column(name = "ManageName")
 	private String manageName;//绠＄悊浜哄鍚�
@@ -80,7 +84,7 @@ public class UnitInfo implements Serializable {
 	@Column(name = "NodeNum")
 	private String nodeNum;//鎬昏妭鐐规暟
 
-	@Column(name = "ISRemove")
+	@Column(name = "IsRemove")
 	private Boolean isRemove;//鏄惁鎺掗櫎
 
 	@Column(name = "UpdateTime")
@@ -99,10 +103,10 @@ public class UnitInfo implements Serializable {
 	private String headTel;//璐ｄ换浜虹數璇�
 
 	@Column(name = "CalledUnitId")
-	private UnitInfo calledUnit; //鎺ヨ鍗曚綅
+	private String CalledUnitId; //鎺ヨ鍗曚綅
 
 	@Column(name = "MonitoringUnitId")
-	private UnitInfo monitoringUnitId;//鐩戞帶鍗曚綅
+	private String monitoringUnitId;//鐩戞帶鍗曚綅
 
 
 	//private Set<UnitInfo> socialUnits = new HashSet<UnitInfo>();//绀句細鍗曚綅
@@ -172,12 +176,12 @@ public class UnitInfo implements Serializable {
 	public void setContactsMail(String contactsMail) {
 		this.contactsMail = contactsMail;
 	}
-	public String getCoordinate() {
-		return coordinate;
-	}
-	public void setCoordinate(String coordinate) {
-		this.coordinate = coordinate;
-	}
+//	public String getCoordinate() {
+//		return coordinate;
+//	}
+//	public void setCoordinate(String coordinate) {
+//		this.coordinate = coordinate;
+//	}
 	public String getManageName() {
 		return manageName;
 	}
@@ -299,26 +303,26 @@ public class UnitInfo implements Serializable {
 //	public void setMachineInfos(Set<MachineInfo> machineInfos) {
 //		this.machineInfos = machineInfos;
 //	}
-	public UserInfo getUpdateUser() {
-		return updateUser;
-	}
-	public void setUpdateUser(UserInfo updateUser) {
-		this.updateUser = updateUser;
-	}
-
-	public UnitInfo getCalledUnit() {
-		return calledUnit;
-	}
-	public void setCalledUnit(UnitInfo calledUnit) {
-		this.calledUnit = calledUnit;
-	}
-	
-	public UnitInfo getMonitoringUnitId() {
-		return monitoringUnitId;
-	}
-	public void setMonitoringUnitId(UnitInfo monitoringUnitId) {
-		this.monitoringUnitId = monitoringUnitId;
-	}
+//	public UserInfo getUpdateUser() {
+//		return updateUser;
+//	}
+//	public void setUpdateUser(UserInfo updateUser) {
+//		this.updateUser = updateUser;
+//	}
+//
+//	public UnitInfo getCalledUnit() {
+//		return calledUnit;
+//	}
+//	public void setCalledUnit(UnitInfo calledUnit) {
+//		this.calledUnit = calledUnit;
+//	}
+//	
+//	public UnitInfo getMonitoringUnitId() {
+//		return monitoringUnitId;
+//	}
+//	public void setMonitoringUnitId(UnitInfo monitoringUnitId) {
+//		this.monitoringUnitId = monitoringUnitId;
+//	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -334,6 +338,24 @@ public class UnitInfo implements Serializable {
 	public void setUnitType(String unitType) {
 		this.unitType = unitType;
 	}
-
+	public String getUpdateUserId() {
+		return updateUserId;
+	}
+	public void setUpdateUserId(String updateUserId) {
+		this.updateUserId = updateUserId;
+	}
+	public String getCalledUnitId() {
+		return CalledUnitId;
+	}
+	public void setCalledUnitId(String calledUnitId) {
+		CalledUnitId = calledUnitId;
+	}
+	public String getMonitoringUnitId() {
+		return monitoringUnitId;
+	}
+	public void setMonitoringUnitId(String monitoringUnitId) {
+		this.monitoringUnitId = monitoringUnitId;
+	}
+	
 
 }

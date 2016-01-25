@@ -1,4 +1,4 @@
-package ccu.model.basicdata;
+ package ccu.model.basicdata;
 
 // Generated 2015-5-7 9:42:43 by Hibernate Tools 3.4.0.CR1
 
@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 
 /**
- * 设备表
+ * 璁惧琛�
  */
 
 @Entity
@@ -21,31 +21,31 @@ public class MachineInfo implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String id;//标识
+	private String id;//鏍囪瘑
 
 	@Column(name = "UnitId")
-	private String unitId;//所属单位
+	private String unitId;//鎵�灞炲崟浣�
 
 	@Column(name = "MachineCode")
-	private String machineCode;//设备编号
+	private String machineCode;//璁惧缂栧彿
 
 	@Column(name = "MachineName")
-	private String machineName;//设备名称
+	private String machineName;//璁惧鍚嶇О
 
 	@Column(name = "MachineType")
-	private String machineType;//设备类型
+	private String machineType;//璁惧绫诲瀷
 
 	@Column(name = "MachineIndex")
-	private Integer machineIndex;//设备序号
+	private Integer machineIndex;//璁惧搴忓彿
 
 	@Column(name = "Maker")
-	private String maker;//制造商
+	private String maker;//鍒堕�犲晢
 
 	@Column(name = "MachineVersion")
-	private String machineVersion;//设备型号
+	private String machineVersion;//璁惧鍨嬪彿
 
 	@Column(name = "IsUsed")
-	private Boolean isUsed;//是否可用
+	private Boolean isUsed;//鏄惁鍙敤
 
 	public String getId() {
 		return id;

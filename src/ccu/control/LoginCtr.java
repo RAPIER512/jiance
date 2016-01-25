@@ -46,18 +46,15 @@ public class LoginCtr {
 			UserInfo user = userInfoRepo.findByAccountAndPassword(jsonObject.getString("username"), jsonObject.getString("password"));
 			if(user == null)
 			{
-				System.out.println("是这的错误");
+				System.out.println("用户登录为空");
 				return "null";
 			}
 			List<UserReRole> list = userReRoleRepo.findByUserId(user.getId());
-			System.out.println("  "+list);
 			Role role = roleRepo.findOne(list.get(0).getRoleId());
-			System.out.println("   "+role);
 			Map<String,String> p = new HashMap<String, String>();
 			p.put("userid", user.getId());
 			p.put("rolename", role.getRoleName());
 			p.put("unitid", user.getUnitId());
-			System.out.println("aa"+p);
 			return JSON.toJSONString(p);
 		} catch (Exception e) {
 			System.out.println("程序错误");
