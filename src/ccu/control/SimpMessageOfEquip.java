@@ -179,8 +179,8 @@ public class SimpMessageOfEquip {
 	public String getMachineInfo(@RequestBody String str) {
 		int pageNum = 0;
 		int pageSize = 0;
-		final String  unitid = null;
 		JSONObject jsonObject = JSON.parseObject(str);
+		final String  unitid = jsonObject.getString("unitid");
 		pageNum = jsonObject.getIntValue("pageNum");
 		pageSize = jsonObject.getIntValue("pageSize");
 		System.out.println("该单位的单位id：" + jsonObject.getString("unitid"));
@@ -190,7 +190,7 @@ public class SimpMessageOfEquip {
 			public Predicate toPredicate(Root<MachineInfo> root,
 					CriteriaQuery<?> query, CriteriaBuilder cb) {
 				
-				Path path = root.get("unitid");
+				Path path = root.get("unitId");
 				Predicate predicate = cb.equal(path,unitid);
 				return predicate;
 			}
@@ -199,7 +199,10 @@ public class SimpMessageOfEquip {
 		Page<MachineInfo> page = machineInfoRepo.findAll(specification, pageable);
 		List<MachineInfo> list = page.getContent();
 		if (list.size() > 0)
+		{
+			System.out.println("unit 返回信息"+list.toString());
 			return JSON.toJSONString(list);
+		}
 		else
 			return "null";
 	}
@@ -229,7 +232,10 @@ public class SimpMessageOfEquip {
 		Page page= eventInfoRepo.findAll(specification, pageable);
 		List<EventInfo> list = page.getContent();
 		if (list.size() > 0)
+		{
+			System.out.println("event 返回信息："+list.toString());
 			return JSON.toJSONString(list);
+		}
 		else
 			return "null";
 	}

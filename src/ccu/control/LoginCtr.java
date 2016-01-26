@@ -50,13 +50,17 @@ public class LoginCtr {
 				return "null";
 			}
 			List<UserReRole> list = userReRoleRepo.findByUserId(user.getId());
+			System.out.println("是否有用户角色："+list.size());
 			Role role = roleRepo.findOne(list.get(0).getRoleId());
+			System.out.println("该用户角色："+role);
 			Map<String,String> p = new HashMap<String, String>();
 			p.put("userid", user.getId());
 			p.put("rolename", role.getRoleName());
 			p.put("unitid", user.getUnitId());
+			System.out.println("成功登陆！");
 			return JSON.toJSONString(p);
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println("程序错误");
 			return "null";
 		}

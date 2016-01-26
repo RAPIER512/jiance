@@ -46,6 +46,9 @@ public class MachineInfo implements Serializable {
 
 	@Column(name = "IsUsed")
 	private Boolean isUsed;//鏄惁鍙敤
+	
+	
+	
 
 	public String getId() {
 		return id;
@@ -108,4 +111,5 @@ public class MachineInfo implements Serializable {
 	public void setIsUsed(Boolean isUsed) {
 		this.isUsed = isUsed;
 	}
+	
 }

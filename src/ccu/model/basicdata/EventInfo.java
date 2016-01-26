@@ -78,7 +78,6 @@ public class EventInfo implements Serializable {
 	
 	
 	
-	
 	public EventInfo() {
 		
 	}
