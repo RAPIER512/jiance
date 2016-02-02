@@ -16,13 +16,13 @@
 			<value>com.microsoft.sqlserver.jdbc.SQLServerDriver</value>
 		</property>
 		<property name="url">
-			<value>jdbc:sqlserver://IP:1433;databaseName=jiance</value>
+			<value>jdbc:sqlserver://211.141.29.123:1433;databaseName=jiance</value>
 		</property>
 		<property name="username">
-			<value>**</value>
+			<value>sa</value>
 		</property>
 		<property name="password">
-			<value>***</value>
+			<value>admin12345</value>
 		</property>
 	</bean>
 
