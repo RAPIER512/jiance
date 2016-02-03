@@ -10,4 +10,6 @@ public interface UserInfoRepo extends JpaRepository<UserInfo,String> {
 	
 	//根据Account, Password查询先关信息
     public UserInfo findByAccountAndPassword(String account,String password);
+    
+    public UserInfo findByAccount(String account);
 }

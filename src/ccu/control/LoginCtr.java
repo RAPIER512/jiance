@@ -4,6 +4,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -39,6 +43,33 @@ public class LoginCtr {
 	@RequestMapping(value = "login",method = RequestMethod.POST,produces="text/plain;charset=UTF-8")
 	public String Login(@RequestBody String str)
 	{
+//		JSONObject jsonObject = JSON.parseObject(str);
+//		try 
+//		{
+//			System.out.println(jsonObject.getString("username")+"    "+ jsonObject.getString("password"));
+//			UserInfo user = userInfoRepo.findByAccountAndPassword(jsonObject.getString("username"), jsonObject.getString("password"));
+//			if(user == null)
+//			{
+//				System.out.println("用户登录为空");
+//				return "null";
+//			}
+//			List<UserReRole> list = userReRoleRepo.findByUserId(user.getId());
+//			System.out.println("是否有用户角色："+list.size());
+//			Role role = roleRepo.findOne(list.get(0).getRoleId());
+//			System.out.println("该用户角色："+role);
+//			Map<String,String> p = new HashMap<String, String>();
+//			p.put("userid", user.getId());
+//			p.put("rolename", role.getRoleName());
+//			p.put("unitid", user.getUnitId());
+//			System.out.println("成功登陆！");
+//			return JSON.toJSONString(p);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			System.out.println("程序错误");
+//			return "null";
+//		}
+		
+		
 		JSONObject jsonObject = JSON.parseObject(str);
 		try 
 		{
@@ -58,11 +89,25 @@ public class LoginCtr {
 			p.put("rolename", role.getRoleName());
 			p.put("unitid", user.getUnitId());
 			System.out.println("成功登陆！");
-			return JSON.toJSONString(p);
+			
+			Subject user1 = SecurityUtils.getSubject();
+			UsernamePasswordToken token = new UsernamePasswordToken(jsonObject.getString("username"), jsonObject.getString("password"));
+			token.setRememberMe(true);
+			try {
+				user1.login(token);
+				return JSON.toJSONString(p);
+			}catch (AuthenticationException e) {
+				token.clear();
+				return "redirect:/";
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("程序错误");
 			return "null";
 		}
+		
+		
+
 	}
 }
