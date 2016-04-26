@@ -67,27 +67,7 @@
 		transaction-manager-ref="transactionManager">
 	</jpa:repositories>
 
-	<!-- 項目自定义的Realm -->
-	<bean id="shiroDbRealm" class="ccu.reaml.MyRealm"></bean>
-
-	<!-- shiro 配置開始 -->
-	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-		<property name="realm" ref="shiroDbRealm" />
-	</bean>
-
-	<!-- Shiro Filter -->
-	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
-		<property name="securityManager" ref="securityManager" />
-		<property name="loginUrl" value="/" />
-		<property name="successUrl" value="/system/main" />
-		<property name="unauthorizedUrl" value="/system/error" />
-		<property name="filterChainDefinitions">
-			<value>
-				/login = anon
-				/** = authc
-			</value>
-		</property>
-	</bean>
+	
 
 
 </beans>

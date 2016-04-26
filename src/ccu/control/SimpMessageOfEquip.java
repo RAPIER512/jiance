@@ -184,7 +184,7 @@ public class SimpMessageOfEquip {
 		pageNum = jsonObject.getIntValue("pageNum");
 		pageSize = jsonObject.getIntValue("pageSize");
 		System.out.println("该单位的单位id：" + jsonObject.getString("unitid"));
-		UnitInfo unitInfo = unitInfoRepo.findOne(jsonObject.getString("unitid"));
+//		UnitInfo unitInfo = unitInfoRepo.findOne(jsonObject.getString("unitid"));
 		Specification<MachineInfo> specification= new Specification<MachineInfo>() {
 			@Override
 			public Predicate toPredicate(Root<MachineInfo> root,
@@ -218,6 +218,7 @@ public class SimpMessageOfEquip {
 		final String  unitid = jsonObject.getString("unitid");
 		pageNum = jsonObject.getIntValue("pageNum");
 		pageSize = jsonObject.getIntValue("pageSize");
+		System.out.println(" ----------" + pageNum + " " + pageSize);
 		Specification<EventInfo> specification= new Specification<EventInfo>() {
 			@Override
 			public Predicate toPredicate(Root<EventInfo> root,
@@ -229,7 +230,7 @@ public class SimpMessageOfEquip {
 			}
 		};
 		Pageable pageable = new PageRequest(pageNum, pageSize);
-		Page page= eventInfoRepo.findAll(specification, pageable);
+		Page<EventInfo> page= eventInfoRepo.findAll(specification, pageable);
 		List<EventInfo> list = page.getContent();
 		if (list.size() > 0)
 		{
